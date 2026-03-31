@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">@color/colorText</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="red">#f62011</color>
+    <color name="black_opacity_60">#99000000</color>
+    <color name="blue_theme">#1488FA</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#FFFFFF</color>
+
+    <color name="colorText">#6578e0</color>
+    <color name="colorLoginHitText">#7a7e94</color>
+
+    <color name="colorActiveLoginButton">#ffd529</color>
+    <color name="colorActiveLoginText">#816800</color>
+    <color name="colorAsterisk">#ffa64d</color>
+
+    <color name="colorTransparentMore">#80000000</color>
+    <color name="backgroundColor">#FCFCFE</color>
+    <color name="backgroundColorNew">#FFEFF0FA</color>
+
+    <!-- http://www.google.com/design/spec/style/color.html#color-color-palette -->
+    <color name="green_500">#4CAF50</color>
+    <color name="green_900">#1B5E20</color>
+    <color name="light_blue_900">#01579B</color>
+    <color name="blue_900">#0D47A1</color>
+    <color name="indigo_100">#C5CAE9</color>
+    <color name="indigo_500">#3F51B5</color>
+    <color name="indigo_700">#303F9F</color>
+    <color name="teal_100">#B2DFDB</color>
+    <color name="teal_500">#009688</color>
+    <color name="teal_800">#00695C</color>
+
+    <color name="background_blue">#cbd3ff</color>
+    <color name="text_mild_black">#de3f3f3f</color>
+    <color name="colorLine">#dad6d6</color>
+    <color name="colorToolBar">#3e50b4</color>
+    <color name="backGround">#8f3e50b4</color>
+    <color name="colorSalmon">#ff8172</color>
+    <color name="colorGreyBrown">#4c4c4c</color>
+    <color name="colorToolbarTitle">#2e2e2e</color>
+    <color name="colorAmbulanceText">#ff8172</color>
+    <color name="colorBlack54">#8b000000</color>
+    <color name="colorBitBlack">#de000000</color>
+    <color name="colorProfileHead">#61000000</color>
+    <color name="colorTransparent">#7F000000</color>
+    <color name="colorTransparentTool">#0d000000</color>
+
+    <color name="colorCoulfBlue">#6578e0</color>
+    <color name="colorSettingToolbarText">#2e2e2e</color>
+
+    <color name="colorCornFlowerBlue">#6578e0</color>
+    
+    <color name="colorGrey">#e4e4e4</color>
+    <color name="colorRed">#ffd0d0</color>
+    <color name="colorRed1">#fd4f4f</color>
+    <color name="colorOrange">#FFA500</color>
+
+    <color name="assessment_head">#737373</color>
+    <color name="assessment_text">#282828</color>
+    <color name="assessment_bold">#4b4b4b</color>
+    <color name="colorGreen">#0fc191</color>
+    <color name="colorNotFilledAssessemnt">#b3b3b3</color>
+</resources>

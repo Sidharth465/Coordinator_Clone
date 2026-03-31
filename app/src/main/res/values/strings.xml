@@ -1,0 +1,719 @@
+<resources>
+    <string name="app_name">Co-ordinator</string>
+
+
+    <string name="stu_dob">DOB</string>
+    <string name="hint_email">Email</string>
+
+    <string name="reg_gender">Gender</string>
+    <string name="string_name">Name</string>
+
+    <string name="gender_male">Male</string>
+    <string name="gender_m">M</string>
+    <string name="gender_female">Female</string>
+    <string name="gender_f">F</string>
+    <string name="gender_tg">O</string>
+
+    <string name="hint_assessment">Nature of Assessment</string>
+    <string name="stu_roll_number">Roll Number</string>
+
+    <string name="hint_contact_number">Contact Number(10 digit)</string>
+    <string name="hint_doctor_experience">Experience</string>
+    <string name="hint_doctor_mci">MCI Number</string>
+
+    <string name="hint_signature">Signature</string>
+    <string name="hint_qualification">Qualification</string>
+
+    <string name="err_msg_name">Please enter a Name</string>
+    <string name="err_msg_required">Valid Input Required</string>
+    <string name="err_msg_email">Please enter a Valid Email</string>
+    <string name="err_msg_password">Enter a Password</string>
+    <string name="err_msg_dob">Enter a valid D.O.B</string>
+
+    <string name="doctor">Doctor</string>
+    <string name="student">Student</string>
+    <string name="qrcode">Qr Code</string>
+    <string name="click">Click</string>
+
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+
+    <string name="stu_class">Class</string>
+    <string name="stu_section">Section</string>
+    <string name="parents_name">Parents Name</string>
+
+    <array name="quadrant_index">
+        <item></item>
+        <item>"1"</item>
+        <item>"2"</item>
+        <item>"3"</item>
+        <item>"4"</item>
+    </array>
+
+    <array name="number_index">
+        <item></item>
+        <item>"1"</item>
+        <item>"2"</item>
+        <item>"3"</item>
+        <item>"4"</item>
+        <item>"5"</item>
+        <item>"6"</item>
+        <item>"7"</item>
+        <item>"8"</item>
+        <item>a</item>
+        <item>b</item>
+        <item>c</item>
+        <item>d</item>
+        <item>e</item>
+    </array>
+
+    <string-array name="qualification_arrays">
+        <item>MBBS</item>
+        <item>BDS</item>
+        <item>MD</item>
+        <item>MS</item>
+        <item>MS Optha</item>
+        <item>BSE Optometrist</item>
+        <item>Optometrist</item>
+        <item>MDS</item>
+        <item>Paramedic</item>
+    </string-array>
+
+    <string-array name="student_relation_arrays">
+        <item>Father</item>
+        <item>Mother</item>
+    </string-array>
+
+    <string-array name="gender_arrays">
+        <item>M</item>
+        <item>F</item>
+        <item>O</item>
+    </string-array>
+
+
+    <string-array name="assessment_arrays">
+        <item>Growth</item>
+        <item>Physical</item>
+        <item>Dental</item>
+        <item>Eye</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="specialization_arrays">
+        <item>MBBS</item>
+        <item>BMBS</item>
+        <item>DCM</item>
+        <item>DMCS</item>
+        <item>Physician</item>
+    </string-array>
+
+    <string-array name="student_class_array">
+        <item>TODDLER</item>
+        <item>PRE-NURSERY</item>
+        <item>NURSERY</item>
+        <item>LKG</item>
+        <item>UKG</item>
+        <item>KG</item>
+        <item>PRE-KINDER</item>
+        <item>KINDER</item>
+        <item>PREPA</item>
+        <item>I</item>
+        <item>II</item>
+        <item>III</item>
+        <item>IV</item>
+        <item>V</item>
+        <item>VI</item>
+        <item>VII</item>
+        <item>VIII</item>
+        <item>IX</item>
+        <item>X</item>
+        <item>XI</item>
+        <item>XII</item>
+    </string-array>
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <string name="admission_no">Admission Number</string>
+    <string name="save">Save</string>
+    <string name="done">Done</string>
+    <string name="parent">Add \n Parent</string>
+    <string name="assessment">Start Assessment</string>
+    <string name="parent_detail">Parent Details</string>
+    <string name="student_profile">Profile</string>
+    <string name="student_assessment">Assessment</string>
+    <string name="reg_admission_number">Admission Number</string>
+
+
+    <!--PhysiAssessmentListModelment Hygiene -->
+    <string name="hygiene">Hygiene</string>
+    <string name="hands_and_nails">Hands and Nails</string>
+    <string name="hair">Hair</string>
+
+    <!--PhysiAssessmentListModelment General Signs -->
+    <string name="general_signs">General Signs</string>
+    <string name="pallor">Pallor</string>
+    <string name="cyanosis">Cyanosis</string>
+    <string name="anemia">Anemia</string>
+    <string name="clubbing">Clubbing</string>
+    <string name="edema">Edema</string>
+
+
+    <string name="password">Password</string>
+    <string name="user_id">User Id</string>
+    <string name="user_id__">User Id___</string>
+    <string name="assessment_id">Assessment Id</string>
+    <string name="save_cont">Save and Continue</string>
+    <string name="log_out">Logout</string>
+    <string name="upload">Upload</string>
+    <string name="copy">Data Copy</string>
+    <string name="list_refresh">Refresh Student List</string>
+    <string name="upload_status_string">Upload Status</string>
+    <string name="finish_assessment_string">Assessment Done</string>
+    <string name="user_id_hint">test@gmail.com</string>
+
+    <string name="incorrect_username_password">Incorrect Username/Password</string>
+    <string name="logout_confirmation">Are you sure you want to logout?</string>
+
+    <string name="exit_confirmation">Are you sure you want to exit?</string>
+    <string name="reg_required_field">Please fill all required field</string>
+
+    <string name="toolbar_title">HSG COORDINATOR</string>
+    <string name="add_new_student">Add new Student</string>
+    <string name="submit_revision">Update Student</string>
+
+    <string name="add_new_doctor">Add new Doctor</string>
+    <string name="submit_doctor">Update Doctor</string>
+
+    <string name="stu_reg_title">SCHEDULED ASSESSMENTS</string>
+    <string name="reg_new">Add New Student</string>
+    <string name="search_text">Search Name</string>
+    <string name="search_all">Go</string>
+
+    <string name="profileAddInfo">Add Information</string>
+    <string name="add_another_parent">Add Parent</string>
+
+    <string name="submit_treatment">Submit Treatment</string>
+
+    <string name="name">Name</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="admission_number">Admission Number</string>
+    <string name="_class">Class</string>
+    <string name="status">Status</string>
+    <string name="section">Section</string>
+    <string name="gender">Gender</string>
+    <string name="age">Age</string>
+    <string name="roll_number">Roll Number</string>
+    <string name="dob">DoB</string>
+    <string name="remark">Remark</string>
+    <string name="edit_details">EDIT DETAILS</string>
+
+    <string name="symptoms">Symptoms</string>
+    <string name="med_suggestions">Treatment</string>
+    <string name="med_body_temp">Body Temperature(Fahrenheit)</string>
+    <string name="med_chief_complaint">Complaint</string>
+    <string name="med_remarks">Remarks</string>
+
+    <string name="ambulance_call">Ambulance Call</string>
+    <string name="parent_call">Parent Call</string>
+    <string name="details">Details >></string>
+    <string name="hsg_id">HSG ID:</string>
+    <string name="tab_add_no">Ad. No.  : </string>
+
+    <string name="title_activity_madical">MadicalActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <string name="reg_name">Name</string>
+    <string name="reg_gender_male">Male</string>
+    <string name="reg_gender_female">Female</string>
+    <string name="reg_gender_tg">TG</string>
+    <string name="reg_dob">Date Of Birth</string>
+    <string name="reg_class">Class</string>
+    <string name="reg_section">Section</string>
+    <string name="reg_parent">Add Parent</string>
+    <string name="reg_parent_detail">Parent Details</string>
+    <string name="reg_save">Add</string>
+
+    <string name="call_ambulance">Call an Ambulance</string>
+    <string name="call_parent">Call Parent</string>
+    <string name="call_doctor">Call a Doctor</string>
+    <string name="call_hsg">Call HSG Support Team</string>
+
+    <string name="tab_ongoing">Ongoing</string>
+    <string name="tab_scheduled">Scheduled</string>
+
+    <string name="collen">:</string>
+
+    <string name="add_parent_info">Add Parent information</string>
+    <string name="parent_name">Name</string>
+    <string name="parent_email">Email</string>
+    <string name="parent_contact_number">Contact</string>
+    <string name="parent_relation">Relationship</string>
+    <string name="academic_info">Basic Information</string>
+
+    <string name="parent_info">Parent Information</string>
+
+    <string name="med_info">Medical Information</string>
+
+    <string name="med_info_add">Add Medical Information</string>
+    <string name="med_info_blood">Blood Group</string>
+    <string name="med_info_food">Food Allergy</string>
+    <string name="med_info_medicine">Medicine Allergy</string>
+    <string name="med_info_remarks">Remarks</string>
+    <string name="setting_title">Settings</string>
+
+    <string name="assessment_ent">ENT</string>
+    <string name="assessment_dental">DENTAL</string>
+    <string name="assessment_eye">EYE</string>
+    <string name="assessment_physician">PHYSICAL</string>
+    <string name="assessment_growth">GROWTH</string>
+    <string name="review">Review</string>
+
+    <string name="remarks">ADD REMARK</string>
+    <string name="absent">MARK ABSENT</string>
+    <string name="start_assessment">START ASSESSMENT</string>
+
+    <string name="doctor_title">Doctors</string>
+    <string name="add_more_doctor">Add More Doctors</string>
+    <string name="add_doctor">Add A New Doctors</string>
+    <string name="save_doctor">Add Doctor</string>
+
+    <string name="support_tile">Help &amp; Support</string>
+    <string name="specialisation">Qualification: </string>
+    <string name="speciality">Speciality</string>
+    <string name="doctor_list_toolbar_title">Manage</string>
+    <string name="setting_toolbar_title">Setting</string>
+    <string name="organization">Organization</string>
+    <string name="absentees">ABSENTEES</string>
+    <string name="list">LIST</string>
+    <string name="pending">PENDING</string>
+    <string name="completed">COMPLETED</string>
+    <string name="in_completed">UNCOMPLETED</string>
+    <string name="total">TOTAL</string>
+    <string name="new_reg">NEW</string>
+    <string name="add_image">Add Image</string>
+    <string name="send_report">Send Report to HQ</string>
+    <string name="assessments">Assessments</string>
+    <string name="assessments_doc">Assessments Per Doctor</string>
+    <string name="assessments_hr">Assessments Per Hour</string>
+    <string name="event_pic">Event Photos</string>
+    <string name="pic_msg">Upload maximum 10 photos of the event</string>
+    <string name="colon">:</string>
+    <string name="mobile_no">Mobile No</string>
+    <string name="not_available">N/A</string>
+    <string name="string_specialisation">Specialization</string>
+    <string name="send_reviews">SEND REVIEWS</string>
+    <string name="qr_code_scan_text">Scan this QR Code on Doctors app</string>
+    <string name="remove">REMOVE</string>
+    <string name="doctor_details">Doctor Details</string>
+    <string name="general_information">General Information</string>
+
+    <string name="height_cm">Height (cm)</string>
+    <string name="weight_kg">Weight (kg)</string>
+    <string name="growth_assessment">Growth Assessment</string>
+    <string name="save_assessment">Save Assessment</string>
+
+    <string name="murmur">Murmur</string>
+    <string name="abnormal_heart_sound">Abnormal Heart Sounds</string>
+    <string name="cardiovascular">Cardiovascular</string>
+    <string name="respiratory">Respiratory</string>
+    <string name="barky_cough">Barky Cough</string>
+    <string name="dyspnea">Dyspnea</string>
+    <string name="crepts">Crepts</string>
+    <string name="hoarse_voice">Hoarse Voice</string>
+    <string name="wheezing">Wheezing</string>
+    <string name="neurological">Neurological</string>
+    <string name="lethargy_sound">Lethargy Sound</string>
+    <string name="slurring_speech">Slurring od Speech</string>
+    <string name="decreased">Decreased</string>
+    <string name="increased">Increased</string>
+    <string name="abnormal_body_tone">Abnormal Body Tone</string>
+    <string name="abdomen">Abdomen</string>
+    <string name="distended">Distended</string>
+    <string name="tender">Tender</string>
+    <string name="tense">Tense</string>
+    <string name="orthopaedics">Orthopaedics</string>
+    <string name="kyphosis">Kyphosis</string>
+    <string name="scoliosis">Scoliosis</string>
+    <string name="flat_foot">Flat Foot</string>
+    <string name="deficiencies_suspected">Deficiencies Suspected</string>
+    <string name="vitamin_c">C</string>
+    <string name="vitamin_d">D</string>
+    <string name="vitamin_b12">B12</string>
+    <string name="vitamin_iron">Iron</string>
+    <string name="vitamin_calcium">Calcium</string>
+
+    <string name="abnormal_shape">Abnormal Shape</string>
+    <string name="bony_swelling">Bony Swelling</string>
+    <string name="scalp_bruising">Scalp Bruising</string>
+    <string name="scalp_swelling">Scalp Swelling</string>
+    <string name="abnormal_hair">Abnormal Hair Pigmentation</string>
+    <string name="submandibular">Submandibular</string>
+    <string name="submental">Submental</string>
+    <string name="pre_auricular">Pre Auricular</string>
+    <string name="cervical">Cervical</string>
+    <string name="lymphatic">Lymphatic</string>
+    <string name="skin">Skin</string>
+    <string name="scabies">Scabies</string>
+    <string name="itching">Itching</string>
+    <string name="contact_dermatitis">Contact Dermatitis</string>
+    <string name="petecheae">Petecheae</string>
+    <string name="acne">Acne</string>
+    <string name="pigmentation">Pigmentation</string>
+    <string name="tinea">Tinea</string>
+    <string name="impetigo">Impetigo</string>
+    <string name="herpas">Herpas</string>
+    <string name="purpura">Purpura</string>
+    <string name="icterus">Icterus</string>
+
+    <array name="left_eye_index">
+        <item></item>
+        <item>6/6</item>
+        <item>6/9</item>
+        <item>6/12</item>
+        <item>6/18</item>
+        <item>6/24</item>
+        <item>6/36</item>
+        <item>6/60</item>
+    </array>
+
+    <array name="right_eye_index">
+        <item></item>
+        <item>6/6</item>
+        <item>6/9</item>
+        <item>6/12</item>
+        <item>6/18</item>
+        <item>6/24</item>
+        <item>6/36</item>
+        <item>6/60</item>
+    </array>
+
+
+    <string name="btn_text_login">Login</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_specialization_id">Specialization</string>
+    <string name="hint_user_id">User Id</string>
+    <string name="other">Other</string>
+    <string name="head">Head</string>
+    <string name="assessment_general">GENERAL</string>
+
+    <string name="left_ear">Left Ear</string>
+    <string name="right_ear">Right Ear</string>
+    <string name="tinnitus">Tinnitus</string>
+    <string name="pain">Pain</string>
+    <string name="malfunction">Malfunction</string>
+    <string name="discharge">Discharge</string>
+    <string name="ear_wax">Ear Wax</string>
+
+    <string name="please_notify">Please Notify</string>
+    <string name="please_remark">Please remark</string>
+
+    <string name="nose">Nose</string>
+    <string name="nasal_polyp">Nasal Polyp</string>
+    <string name="sinus_tenderness">Sinus Tenderness</string>
+    <string name="deviated_nasal_septum">Deviated Nasal Septum</string>
+
+    <string name="oral_throat">Oral Cavity and Throat</string>
+    <string name="cheilitis">Cheilitis</string>
+    <string name="oral_thrush">Oral Thrush</string>
+    <string name="throat_pain">Throat Pain</string>
+    <string name="tonsillopharyngitis">Tonsillopharyngitis</string>
+    <string name="tonsillitis">Tonsillitis</string>
+    <string name="adenoids">Adenoids</string>
+    <string name="cyst">Cyst</string>
+    <string name="thyroid_swelling">Thyroid Swelling</string>
+
+    <string name="left_eye">Left Eye</string>
+    <string name="right_eye">Right Eye</string>
+    <string name="optometry">Optometry</string>
+    <string name="clinical_right_eye">Clinical - Right Eye</string>
+    <string name="clinical_left_eye">Clinical - Left Eye</string>
+    <string name="amblyopia">Amblyopia</string>
+    <string name="conjuctivitis">Conjuctivitis</string>
+    <string name="squint">Squint</string>
+    <string name="blepharitis">Blepharitis</string>
+    <string name="refraction">Refraction</string>
+    <string name="trauma">Trauma</string>
+    <string name="ptosis">Ptosis</string>
+
+    <string name="suggested">Suggested Investigation</string>
+
+    <string name="chief_complaint">Chief Complaint</string>
+    <string name="tooth_pain">Tooth Pain</string>
+    <string name="bleeding_gums">Bleeding Gums</string>
+    <string name="decayed_teeth">Decayed Teeth</string>
+    <string name="inflamed_gums">Inflamed Gums</string>
+
+    <string name="oral_hygiene">Oral Hygiene</string>
+    <string name="poor_oral_hygiene">Poor Oral Hygiene</string>
+
+    <string name="habits">Habits</string>
+    <string name="thumb_sucking">Thumb Sucking</string>
+    <string name="bottle_sucking">Bottle Sucking</string>
+    <string name="mouth_breathing">Mouth Breathing</string>
+    <string name="brushing_once">Brushing once/day</string>
+    <string name="examination_teeth">EXAMINATION OF TEETH</string>
+
+    <string name="dmft_index">DMFT Index</string>
+    <string name="quadrant">Quadrant</string>
+    <string name="Number">Number</string>
+    <string name="d">D</string>
+    <string name="m">M</string>
+    <string name="f">F</string>
+    <string name="add_more">Add More</string>
+
+    <string name="malocclusion">Malocclusion</string>
+    <string name="class1">Class 1</string>
+    <string name="class2">Class 2</string>
+    <string name="class3">Class 3</string>
+
+    <string name="examination_gingiva">EXAMINATION OF GINGIVA</string>
+    <string name="stains">Stains</string>
+    <string name="grade1">Grade 1</string>
+    <string name="grade2">Grade 2</string>
+    <string name="grade3">Grade 3</string>
+    <string name="calculus">Calculus</string>
+
+    <string name="doc_consultation">Doctor Consultation</string>
+    <string name="Scaling">Scaling</string>
+    <string name="Filling">Filling</string>
+    <string name="orthodontic_treatment">Orthodontic Treatment</string>
+    <string name="change_dental_kit">Change Dental Kit</string>
+    <string name="other_tests">Other Tests</string>
+    <string name="tooth_rehabilitation">Tooth Rehabilitation</string>
+    <string name="extraction">Extraction</string>
+    <string name="iopa">IOPA</string>
+    <string name="opg">OPG</string>
+    <string name="fluoride_treatment">Fluoride Treatment</string>
+    <string name="submit_continue">Submit And Continue</string>
+
+    <string name="physician">Physical</string>
+    <string name="dental">Dental</string>
+    <string name="eye">Eye</string>
+    <string name="ent">Ent</string>
+
+
+    <string name="assessment_dental_dental">1. Dental Assessment</string>
+    <string name="assessment_dental_teeth">2. Examination Of Teeth</string>
+    <string name="assessment_dental_gingiva">3. Examination of Gingivia</string>
+    <string name="assessment_dental_suggested">4. Suggested Investigations - Dental</string>
+
+    <string name="assessment_ent_ent">1. ENT Assessment</string>
+    <string name="assessment_ent_suggested">2. Suggested Investigations - ENT</string>
+
+    <string name="assessment_eye_eye">1. EYE Assessment</string>
+    <string name="assessment_eye_suggested">2. Suggested Investigations - EYE</string>
+
+    <string name="assessment_physical_physical">1. PHYSICAL Assessment</string>
+    <string name="assessment_physical_suggested">2. Suggested Investigations - PHYSICAL</string>
+    <string name="doctor_toolbar_title">STUDENT DETAIL</string>
+    <string name="assessment_data">assessmentData</string>
+
+
+    <string name="doctor_consultation">Doctor Consultation</string>
+    <string name="fitness_program">Fitness Program</string>
+    <string name="nutrition_program">Nutrition Program</string>
+    <string name="ct_mri_scan">CT/MRI Scan</string>
+    <string name="x_ray">X-Ray</string>
+    <string name="x_ray_chest">Chest</string>
+    <string name="x_ray_limbs">Limbs</string>
+    <string name="x_ray_abdomen">Abdomen</string>
+    <string name="x_ray_dental">Dental</string>
+
+    <string name="ultrasound">Ultrasound</string>
+    <string name="ultrasound_chest">Chest</string>
+    <string name="ultrasound_spine">Spine</string>
+    <string name="ultrasound_abdomen">Abdomen</string>
+
+    <string name="blood_test">Blood Test</string>
+    <string name="blood_test_complete">Complete Blood Test(CBC)</string>
+    <string name="blood_test_glucose">Blood Glucose</string>
+    <string name="blood_test_kidney">Kidney Functional Test</string>
+    <string name="blood_test_calcium">Calcium/ Phosphorous/ Alkaline Phosphate</string>
+    <string name="blood_test_vit">Vit D3 Levels</string>
+    <string name="blood_test_thyroid">Thyroid Profile</string>
+    <string name="blood_test_lipid">Lipid Profile</string>
+    <string name="blood_test_vit_b12">Vit B12</string>
+    <string name="blood_test_peripheral">Peripheral Smear</string>
+
+    <string name="stool_test">Stool Test</string>
+    <string name="stool_test_routine_microscopy">Routine/Microscopy</string>
+    <string name="stool_test_culture">Culture</string>
+
+    <string name="urine_test">Urine Test</string>
+    <string name="urine_test_routine_microscopy">Routine/Microscopy</string>
+    <string name="urine_test_culture">Culture</string>
+    <string name="urine_test_urine_protein">Urine Protein</string>
+    <string name="scan_the_qr_code">Scan the QR Code</string>
+
+    <string name="add_remarks">Add Remark</string>
+    <string name="close_text">Close</string>
+    <string name="submit_text">Submit</string>
+    <string name="type_here">Type Here..</string>
+
+    <string name="no_internet">No internet</string>
+
+    <string name="no_doctor">Doctor not assigned</string>
+    <string name="no_doctor_warning">Assessment cannot be started till a doctor is assigned. Please onboard doctors from Manage section.</string>
+    <string name="okay">OKAY</string>
+
+    <string name="successfully_registered">Successfully Registered</string>
+
+    <string name="assessment_status">Status</string>
+    <string name="doctor_connection_status">Connected</string>
+    <string name="doctor_not_connection_status">Disconnected</string>
+
+    <string name="no_Absentees">No Absentees</string>
+
+    <string name="mark_absent">Mark Absent</string>
+    <string name="mark_absent_msg">Are you sure this student is Absent?</string>
+
+    <string name="delete_doc">Delete Doctor</string>
+    <string name="delete_doc_msg">Are you sure you want to delete this doctor?</string>
+
+    <string name="update_doc">Update Doctor</string>
+    <string name="update_doc_msg">Are you sure you want to update doctor\'s info?</string>
+
+    <string name="update_stu">Update Student</string>
+    <string name="update_stu_msg">Are you sure you want to update student\'s info?</string>
+
+    <string name="time_out">Please Check Your Internet Connection.</string>
+
+    <string name="confirm">Please Confirm</string>
+    <string name="confirm_student">Are you sure you want to send this Student for assessment?</string>
+
+    <string name="tab_list">List</string>
+    <string name="tab_dashboard">Dashboard</string>
+    <string name="tab_manager">Manager</string>
+
+    <string name="remark_text">N/A</string>
+
+    <string name="assessment_complete_alert">Please confirm that you have checked all the assessments for this student.</string>
+    <string name="assessment_complete_msg">Are you sure you want to complete assessment for</string>
+    <string name="assessment_incomplete_msg">Are you sure you want to incomplete assessment for</string>
+    <string name="student_assessment_complete">Has been gone through all assessments. Please confirm and complete.</string>
+
+    <string name="assessment_not_completed_msg">Assessment not completed.</string>
+    <string name="high_risk_marked_msg">High Risk area marked.</string>
+    <string name="number_validation">Please enter a valid number.</string>
+
+    <string name="send_button">Send</string>
+    <string name="all">All</string>
+    <string name="select_option">Select option</string>
+    <string name="no_doctor_select_message">Please select one doctor</string>
+
+    <array name="stu_status">
+        <item>All</item>
+        <item>Pending</item>
+        <item>Completed</item>
+        <item>OnGoing</item>
+        <item>Absent</item>
+        <item>New Reg</item>
+        <item>Incomplete</item>
+    </array>
+
+    <string name="mark_absent_warning">Assessment for this students has already been started.</string>
+    <string name="absent_mark_warning">You already mark absent.</string>
+    <string name="number_of_students">Number Of Students:</string>
+    <string name="assessment_value">Y</string>
+    <string name="no_doctor_selected">Please select at least one doctor</string>
+    <string name="no_remark">Please add remark</string>
+    <string name="alert">Alert</string>
+    <string name="no_admission_number_message">You did not fill admission number. Do you want continue.?</string>
+    <string name="duplicate_admission_number_message">Duplicate admission number. Please check.</string>
+
+    <string name="cancel_button">cancel</string>
+    <string name="done_button">Done</string>
+
+    <string name="incomplete_dialog_title">Do you want to mark incomplete? </string>
+    <string name="remark_mandatory">Remark is mandatory.</string>
+    <string name="status_mandatory">Status is mandatory.</string>
+
+    <string name="no_camera_permission">Camera permission denied</string>
+    <string name="no_medical_partner">Medical Partner not assigned</string>
+    <string name="no_isp">ISP not assigned</string>
+    <string name="no_partner">Partners not assigned</string>
+    <string name="check_details">Something went wrong please try again.</string>
+
+    <string name="copy_done">Copy done.</string>
+    <string name="new_reg_list_title">New Registered Students</string>
+    <string name="absentee_list_title">Absent Students</string>
+    <string name="assessment_count_title">Assessment Count</string>
+
+    <string name="class_age_valid_msg">Class and Age does not match.Please Check</string>
+    <string name="date_text">Date</string>
+
+    <string name="student_status_string">Student Status</string>
+    <string name="assessment_status_string">Assessment Status</string>
+    <string name="doctor_status_string">Doctor Status</string>
+    <string name="images_status_string">Images Status</string>
+
+    <string name="assessment_complete_student">Assessment has been completed for the student. Still want to send it.</string>
+    <string name="ok_button">Start</string>
+    <string name="comment">Any comment</string>
+
+    <string name="msp_check_string">MSP assign check</string>
+    <string name="isp_check_string">ISP assign check</string>
+    <string name="student_list_check_string">Student list check</string>
+    <string name="tablet_battery_check_string">Tablets battery check</string>
+
+    <string name="assessment_status_text">Select status :</string>
+    <string-array name="status_array">
+        <item>Select</item>
+        <item>Incomplete</item>
+        <item>Complete</item>
+    </string-array>
+
+    <string name="complete_string">Complete</string>
+    <string name="incomplete_string">Incomplete</string>
+    <string name="incomplete_student_status_string">Incomplete Student</string>
+
+
+    <string name="data_upload_check">Data can not upload.</string>
+    <string name="ongoing_student">Students are available into the ongoing list. Please onboard doctors from Manage section.</string>
+
+    <string name="add_isp_string">Add a new coordinator</string>
+    <string name="unique_id_image_string">Unique id image</string>
+    <string name="unique_id_value_string">Unique id value</string>
+
+    <string name="unique_id_string">Unique Id</string>
+
+    <string-array name="unique_id_arrays">
+        <item>Aadhar card</item>
+        <item>Pan card</item>
+        <item>Voter ID</item>
+        <item>Licence</item>
+        <item>Not Available</item>
+    </string-array>
+
+
+    <string name="update_coordinator">Update coordinator</string>
+    <string name="update_coordinator_msg">Are you sure you want to update coordinator\'s info?</string>
+
+    <string name="add_coordinator">Add coordinator</string>
+
+    <string name="add_new_coordinator">Add A New Coordinator</string>
+    <string name="submit_coordinator">Update coordinator</string>
+
+    <string name="upload_check">Pre upload check</string>
+    <string name="help_support_string">Help and Support</string>
+
+
+    <string name="battery_status">Coordinator TAB battery status </string>
+    <string name="network_status">Coordinator TAB network status </string>
+    <string name="ongoing_list_status">On-going list status </string>
+    <string name="connected_doctor_count">Connected doctor</string>
+
+    <string name="training_child_tile">Training</string>
+    <string name="training_not_complete">Doctors training not done.</string>
+    <string name="select_text">Select</string>
+    <string name="todo">TODO</string>
+    <string name="logo">logo</string>
+    <string name="login">Login</string>
+    <string name="forgot_password">forgot password ?</string>
+
+
+</resources>
