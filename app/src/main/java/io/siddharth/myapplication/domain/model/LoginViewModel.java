@@ -43,11 +43,14 @@ public class LoginViewModel extends ViewModel {
         repository.login(uId, pass,assessment,new LoginRepository.LoginResponseCallback() {
             @Override
             public  void onSuccess(LoginResponseModel response) {
+
                 loginState.postValue(LoginState.SUCCESS);
             }
 
             @Override
             public void onError(String error) {
+
+
                 loginState.postValue(LoginState.ERROR_NETWORK);
             }
         });

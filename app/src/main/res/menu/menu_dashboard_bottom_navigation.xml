@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/tab_dash_student_list"
+        android:title="@string/tab_list"
+        android:icon="@drawable/ic_home_inactive"
+        app:showAsAction="always" />
+
+
+    <item
+        android:id="@+id/tab_dash_analytics"
+        android:icon="@drawable/ic_dashboard_inactive"
+        android:title="@string/tab_dashboard"
+        app:showAsAction="collapseActionView" />
+
+
+    <item
+        android:id="@+id/tab_dash_support"
+        android:title="@string/tab_manager"
+        android:icon="@drawable/ic_manage_inactive"
+        app:showAsAction="ifRoom" />
+
+</menu>

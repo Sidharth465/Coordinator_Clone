@@ -1,13 +1,49 @@
 package io.siddharth.myapplication.data.remote;
 
 import io.siddharth.myapplication.data.remote.request.LoginRequest;
-
 import io.siddharth.myapplication.domain.model.LoginResponseModel;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface ApiService {
-    @POST("api/login") // Replace with your actual endpoint
+    @POST("login")
     Call<LoginResponseModel> login(@Body LoginRequest request);
+
+    @GET("api/v2/nodeIds")
+    Call<Object> getNodeIds();
+
+    @GET("api/v2/organization")
+    Call<Object> getOrganization();
+
+    @GET("api/v2/assessment/key/meta")
+    Call<Object> getAssessmentMeta();
+
+    @GET("api/v2/download/omr/flat/v2")
+    Call<Object> downloadStudentList();
+
+    @POST("api/v2/user")
+    Call<Object> updateUser(@Body Object userRequest);
+
+    @POST("api/v2/upload/app/user")
+    Call<Object> uploadStudentData(@Body Object studentRequest);
+
+    @POST("api/v2/upload/omr")
+    Call<Object> uploadOMRData(@Body Object omrRequest);
+
+    @GET("api/s3/uploadaccess")
+    Call<Object> getImageUploadAccess();
+
+    @POST("api/v2/content")
+    Call<Object> uploadImageContent(@Body Object contentRequest);
+
+    @POST("api/v2/content/association")
+    Call<Object> uploadImageAssociation(@Body Object associationRequest);
+
+    @POST("api/v2/event")
+    Call<Object> trackEvent(@Body Object eventRequest);
+
+    @POST("api/v2/assessment/reporting")
+    Call<Object> reportEvent(@Body Object reportRequest);
 }
