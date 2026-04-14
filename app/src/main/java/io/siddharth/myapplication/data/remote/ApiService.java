@@ -1,6 +1,7 @@
 package io.siddharth.myapplication.data.remote;
 
-import io.siddharth.myapplication.data.remote.request.LoginRequest;
+import io.siddharth.myapplication.domain.model.LoginRequestModel;
+import io.siddharth.myapplication.data.remote.response.StudentListResponse;
 import io.siddharth.myapplication.domain.model.LoginResponseModel;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -9,7 +10,7 @@ import retrofit2.http.POST;
 
 public interface ApiService {
     @POST("login")
-    Call<LoginResponseModel> login(@Body LoginRequest request);
+    Call<LoginResponseModel> login(@Body LoginRequestModel request);
 
     @GET("api/v2/nodeIds")
     Call<Object> getNodeIds();
@@ -21,7 +22,7 @@ public interface ApiService {
     Call<Object> getAssessmentMeta();
 
     @GET("api/v2/download/omr/flat/v2")
-    Call<Object> downloadStudentList();
+    Call<StudentListResponse> downloadStudentList();
 
     @POST("api/v2/user")
     Call<Object> updateUser(@Body Object userRequest);

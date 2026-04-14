@@ -8,11 +8,21 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import io.siddharth.myapplication.R;
+import io.siddharth.myapplication.databinding.FragmentAnalyticsBinding;
 
 public class AnalyticsFragment extends Fragment {
+    private FragmentAnalyticsBinding binding;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_analytics, container, false);
+        binding = FragmentAnalyticsBinding.inflate(inflater, container, false);
+        return binding.getRoot();
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
     }
 }

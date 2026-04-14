@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.activity.OnBackPressedCallback;
@@ -12,45 +11,47 @@ import androidx.activity.SystemBarStyle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager2.widget.ViewPager2;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import io.siddharth.myapplication.R;
 import io.siddharth.myapplication.adapter.DashboardPagerAdapter;
+import io.siddharth.myapplication.databinding.ActivityDashboardBinding;
+import io.siddharth.myapplication.domain.model.DashboardViewModel;
 
 public class DashboardActivity extends AppCompatActivity {
 
-    private ViewPager2 viewPager;
-    private BottomNavigationView bottomNavigationView;
-    private Toolbar toolbar;
-    private TextView toolbarTitle;
-
+    private ActivityDashboardBinding binding;
+    private DashboardViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Enable Edge-to-Edge and set custom system bar colors
+        // 1. Initialize View Binding
+        binding = ActivityDashboardBinding.inflate(getLayoutInflater());
+        
         EdgeToEdge.enable(this,
                 SystemBarStyle.dark(ContextCompat.getColor(this, R.color.colorToolBar)),
                 SystemBarStyle.light(ContextCompat.getColor(this, R.color.colorWhite), ContextCompat.getColor(this, R.color.colorWhite))
         );
 
-        setContentView(R.layout.activity_dashboard);
+        setContentView(binding.getRoot());
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        // 2. Initialize ViewModel
+        viewModel = new ViewModelProvider(this).get(DashboardViewModel.class);
+
+        ViewCompat.setOnApplyWindowInsetsListener(binding.main, (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            
             return WindowInsetsCompat.CONSUMED;
         });
 
+        // 3. Handle Back Press with Modern Dispatcher
         OnBackPressedCallback callback = new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
@@ -58,12 +59,6 @@ public class DashboardActivity extends AppCompatActivity {
             }
         };
         getOnBackPressedDispatcher().addCallback(this, callback);
-
-        // Initialize Views
-        viewPager = findViewById(R.id.dashboardPager);
-        bottomNavigationView = findViewById(R.id.dashBottomBar);
-        toolbar = findViewById(R.id.toolbar);
-        toolbarTitle = findViewById(R.id.toolbar_title);
 
         setupToolbar();
         setupViewPager();
@@ -81,40 +76,40 @@ public class DashboardActivity extends AppCompatActivity {
     }
 
     private void setupToolbar() {
-        setSupportActionBar(toolbar);
+        setSupportActionBar(binding.toolbar.toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayShowTitleEnabled(false);
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         }
-        toolbarTitle.setVisibility(View.VISIBLE);
-        toolbarTitle.setText(getString(R.string.app_name));
+        binding.toolbar.toolbarTitle.setVisibility(View.VISIBLE);
+        binding.toolbar.toolbarTitle.setText(getString(R.string.app_name));
     }
 
     private void setupViewPager() {
         DashboardPagerAdapter adapter = new DashboardPagerAdapter(this);
-        viewPager.setAdapter(adapter);
-        viewPager.setOffscreenPageLimit(3);
+        binding.dashboardPager.setAdapter(adapter);
+        binding.dashboardPager.setOffscreenPageLimit(3);
 
-        viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+        binding.dashboardPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
-                bottomNavigationView.getMenu().getItem(position).setChecked(true);
+                binding.dashBottomBar.getMenu().getItem(position).setChecked(true);
                 updateToolbarTitle(position);
             }
         });
     }
 
     private void setupBottomNavigation() {
-        bottomNavigationView.setOnItemSelectedListener(item -> {
+        binding.dashBottomBar.setOnItemSelectedListener(item -> {
             int itemId = item.getItemId();
             if (itemId == R.id.tab_dash_student_list) {
-                viewPager.setCurrentItem(0);
+                binding.dashboardPager.setCurrentItem(0);
                 return true;
             } else if (itemId == R.id.tab_dash_analytics) {
-                viewPager.setCurrentItem(1);
+                binding.dashboardPager.setCurrentItem(1);
                 return true;
             } else if (itemId == R.id.tab_dash_support) {
-                viewPager.setCurrentItem(2);
+                binding.dashboardPager.setCurrentItem(2);
                 return true;
             }
             return false;
@@ -124,13 +119,13 @@ public class DashboardActivity extends AppCompatActivity {
     private void updateToolbarTitle(int position) {
         switch (position) {
             case 0:
-                toolbarTitle.setText("Student List");
+                binding.toolbar.toolbarTitle.setText("Student List");
                 break;
             case 1:
-                toolbarTitle.setText("Analytics");
+                binding.toolbar.toolbarTitle.setText("Analytics");
                 break;
             case 2:
-                toolbarTitle.setText("Support");
+                binding.toolbar.toolbarTitle.setText("Support");
                 break;
         }
     }
@@ -144,7 +139,7 @@ public class DashboardActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.action_settings) {
-            // Intent to SettingActivity would go here
+            // Intent to SettingActivity could go here
             return true;
         }
         return super.onOptionsItemSelected(item);

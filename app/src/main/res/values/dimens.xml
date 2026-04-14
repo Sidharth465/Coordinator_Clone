@@ -40,6 +40,5 @@
     <dimen name="check_list_dialog">20dp</dimen>
     <dimen name="ten_margin">20dp</dimen>
 
-
-
+    <dimen name="login_horizontal_margin">50dp</dimen>
 </resources>
