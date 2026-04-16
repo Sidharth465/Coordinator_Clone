@@ -20,16 +20,24 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import io.siddharth.myapplication.R;
 import io.siddharth.myapplication.adapter.DashboardPagerAdapter;
+import io.siddharth.myapplication.communication.ChatClientThread;
 import io.siddharth.myapplication.databinding.ActivityDashboardBinding;
 import io.siddharth.myapplication.domain.model.DashboardViewModel;
 
 public class DashboardActivity extends AppCompatActivity {
+
+    public static ChatClientThread chatClientThread;
 
     private ActivityDashboardBinding binding;
     private DashboardViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        if(chatClientThread == null){
+            chatClientThread = new ChatClientThread();
+            chatClientThread.start();
+        }
         super.onCreate(savedInstanceState);
 
         // 1. Initialize View Binding

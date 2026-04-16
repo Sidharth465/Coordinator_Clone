@@ -16,6 +16,12 @@ public interface StudentDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertStudents(List<StudentModel> students);
 
+    @Query("SELECT * FROM students WHERE assessmentStatus IN (:statuses)")
+    LiveData<List<StudentModel>> getStudentsByMultipleStatuses(int[] statuses);
+
+    @Query("SELECT * FROM students WHERE assessmentStatus IN (:statuses) AND (name LIKE :query OR admissionNo LIKE :query)")
+    LiveData<List<StudentModel>> searchStudentsByMultipleStatuses(int[] statuses, String query);
+
     @Query("SELECT * FROM students")
     LiveData<List<StudentModel>> getAllStudents();
 

@@ -3,6 +3,7 @@ package io.siddharth.myapplication.adapter;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
+
 import io.siddharth.myapplication.fragments.AssessmentListFragment;
 import io.siddharth.myapplication.fragments.StudentListFragment;
 
@@ -16,9 +17,10 @@ public class HomePagerAdapter extends FragmentStateAdapter {
     @Override
     public Fragment createFragment(int position) {
         if (position == 0) {
-            return new AssessmentListFragment();
+            return new AssessmentListFragment(); // Tab 0: Ongoing
+        } else {
+            return new StudentListFragment(); // Tab 1: Scheduled
         }
-        return new StudentListFragment();
     }
 
     @Override

@@ -42,4 +42,13 @@ public class LoginResponseModel {
         @SerializedName("name")
         public String name;
     }
+    public class NodeResponse {
+        @SerializedName("msp")
+        private List<String> msp; // List of MSP IDs
+        @SerializedName("isp")
+        private List<String> isp; // List of ISP IDs
+
+        public List<String> getMsp() { return msp; }
+        public List<String> getIsp() { return isp; }
+    }
 }

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ear Findings"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/cbEarWaxRight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Right Ear Wax" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/cbEarWaxLeft"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Left Ear Wax" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/cbHearingLoss"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Suspected Hearing Loss" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="ENT Remarks">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etEntRemarks"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,7 +1,6 @@
 package io.siddharth.myapplication.util;
 
 
-
 public class Constants {
     public static String DOCTOR_NATURE_ASSESSMENT = null;
     public static String PHYSICAL_ASSESSMENT = "physical";

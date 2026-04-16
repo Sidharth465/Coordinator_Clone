@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Hygiene Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hygiene"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/cbHandsNails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hands and Nails" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/cbHair"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hair" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- General Signs Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="General Signs"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/cbPallor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pallor" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/cbCyanosis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cyanosis" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/cbAnemia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Anemia" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/cbClubbing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Clubbing" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/cbEdema"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Edema" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

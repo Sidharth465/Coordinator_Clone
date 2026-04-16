@@ -23,6 +23,7 @@ import io.siddharth.myapplication.R;
 import io.siddharth.myapplication.data.repository.LoginRepository;
 import io.siddharth.myapplication.domain.model.LoginViewModel;
 import io.siddharth.myapplication.domain.model.LoginViewModelFactory;
+import io.siddharth.myapplication.fragments.CheckListDialogFragment;
 import io.siddharth.myapplication.fragments.LoadingDialog;
 
 public class LoginActivity extends AppCompatActivity   {
@@ -38,6 +39,10 @@ public class LoginActivity extends AppCompatActivity   {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
+        showChecklistDialog();
+//        if (true || !DatabaseManager.getInstance().checkStudentList(this)) {
+//            showChecklistDialog();
+//        }
 
         userIdEditText = findViewById(R.id.user_id);
         passwordEditText = findViewById(R.id.password);
@@ -159,6 +164,10 @@ public class LoginActivity extends AppCompatActivity   {
             }
         });
 
+    }
+    private void showChecklistDialog() {
+        CheckListDialogFragment dialog = new CheckListDialogFragment();
+        dialog.show(getSupportFragmentManager(), "CheckListDialog");
     }
 
     private void showLoading() {

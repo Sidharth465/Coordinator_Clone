@@ -28,20 +28,24 @@ public class StudentViewModel extends AndroidViewModel {
 
     public LiveData<List<StudentModel>> getScheduledStudents() {
         return Transformations.switchMap(searchQuery, query -> {
+            // Include both Pending (0) and Not Started (5) in the Scheduled tab
+            int[] statuses = {Constants.ASSESSMENT_STATUS_PENDING, Constants.ASSESSMENT_STATUS_NOT_STARTED};
             if (query == null || query.isEmpty()) {
-                return studentDao.getStudentsByStatus(Constants.ASSESSMENT_STATUS_PENDING);
+                return studentDao.getStudentsByMultipleStatuses(statuses);
             } else {
-                return studentDao.searchStudentsByStatus(Constants.ASSESSMENT_STATUS_PENDING, "%" + query + "%");
+                return studentDao.searchStudentsByMultipleStatuses(statuses, "%" + query + "%");
             }
         });
     }
 
     public LiveData<List<StudentModel>> getOngoingStudents() {
         return Transformations.switchMap(searchQuery, query -> {
+            // Include Ongoing (1) and Incomplete (7) in the Ongoing tab
+            int[] statuses = {Constants.ASSESSMENT_STATUS_ONGOING, Constants.ASSESSMENT_STATUS_INCOMPLETE};
             if (query == null || query.isEmpty()) {
-                return studentDao.getStudentsByStatus(Constants.ASSESSMENT_STATUS_ONGOING);
+                return studentDao.getStudentsByMultipleStatuses(statuses);
             } else {
-                return studentDao.searchStudentsByStatus(Constants.ASSESSMENT_STATUS_ONGOING, "%" + query + "%");
+                return studentDao.searchStudentsByMultipleStatuses(statuses, "%" + query + "%");
             }
         });
     }

@@ -61,9 +61,19 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel:2.8.0")
     implementation("androidx.lifecycle:lifecycle-livedata:2.8.0")
+    implementation(libs.volley)
     val room_version = "2.6.1"
     implementation("androidx.room:room-runtime:$room_version")
     annotationProcessor("androidx.room:room-compiler:$room_version")
+    implementation("de.hdodenhof:circleimageview:3.1.0")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.16.0")
+    implementation("com.github.yalantis:ucrop:2.2.1")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.13.3")
+    implementation("com.fasterxml.jackson.core:jackson-core:2.13.3")
+    implementation("com.fasterxml.jackson.core:jackson-annotations:2.13.3")
+    implementation("com.github.bosphere.android-filelogger:filelogger:1.0.7")
+   
 //    added by sid
 
     testImplementation(libs.junit)
