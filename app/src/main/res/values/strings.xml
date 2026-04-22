@@ -720,6 +720,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="no_assessments_found">No Assessments Found</string>
     <string name="no_students_found">No Students Found</string>
+    <string name="student_list">Student List</string>
+    <string name="analytics">Analytics</string>
+    <string name="support">Support</string>
 
 
 </resources>

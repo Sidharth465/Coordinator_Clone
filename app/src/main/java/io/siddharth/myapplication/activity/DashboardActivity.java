@@ -127,13 +127,13 @@ public class DashboardActivity extends AppCompatActivity {
     private void updateToolbarTitle(int position) {
         switch (position) {
             case 0:
-                binding.toolbar.toolbarTitle.setText("Student List");
+                binding.toolbar.toolbarTitle.setText(R.string.student_list);
                 break;
             case 1:
-                binding.toolbar.toolbarTitle.setText("Analytics");
+                binding.toolbar.toolbarTitle.setText(R.string.analytics);
                 break;
             case 2:
-                binding.toolbar.toolbarTitle.setText("Support");
+                binding.toolbar.toolbarTitle.setText(R.string.support);
                 break;
         }
     }

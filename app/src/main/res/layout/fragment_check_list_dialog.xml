@@ -1,79 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+    android:layout_width="300dp"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="24dp"
+    android:layout_gravity="center"
+
     android:background="@android:color/white"
-    >
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/dialog_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="Pre-Login Checklist"
-        android:textColor="@color/colorToolBar"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
-    <CheckBox
-        android:id="@+id/msp_checkBox"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:text="@string/msp_check_string"
-        android:textSize="16sp" />
-
-    <CheckBox
-        android:id="@+id/isp_checkBox"
+    <LinearLayout
+        android:id="@+id/check_list_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:text="ISP Assignment Check"
-        android:textSize="16sp" />
 
-    <CheckBox
-        android:id="@+id/student_checkBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:text="Student List Check"
-        android:textSize="16sp" />
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:weightSum="2">
 
-    <CheckBox
-        android:id="@+id/tab_charged_checkBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:text="Tablet Charged Check"
-        android:textSize="16sp" />
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/msp_checkBox_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/ten_margin"
+                android:text="@string/msp_check_string"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/isp_checkBox_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/ten_margin"
+                android:text="@string/isp_check_string"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/student_list_checkBox_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/ten_margin"
+                android:text="@string/student_list_check_string"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/device_charged_checkBox_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/ten_margin"
+                android:text="@string/tablet_battery_check_string"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/check_list_dialog"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+            <CheckBox
+                android:id="@+id/msp_checkBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <CheckBox
+                android:id="@+id/isp_checkBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                 />
+
+            <CheckBox
+                android:id="@+id/student_checkBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+
+            <CheckBox
+                android:id="@+id/tab_charged_checkBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+    </LinearLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/comment_layout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:hint="Comments (Optional)">
+        android:layout_below="@+id/check_list_layout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/comment_edit_text"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textMultiLine"
-            android:lines="2" />
+            android:layout_height="100dp"
+            android:layout_marginStart="@dimen/check_list_dialog"
+            android:layout_marginEnd="@dimen/check_list_dialog"
+            android:layout_marginBottom="@dimen/check_list_dialog"
+            android:hint="@string/comment"
+            android:gravity="top"
+            android:inputType="textMultiLine" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/done"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/blue_rounded_button"
-        android:enabled="false"
-        android:text="Done"
-        android:textColor="@android:color/white" />
+        android:layout_below="@+id/comment_layout"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="end"
+        android:layout_marginEnd="@dimen/ten_margin"
+        android:layout_marginBottom="@dimen/ten_margin"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/ok_button"
+        android:textColor="#5f70d3"
+        android:textSize="14sp"
+        android:textStyle="normal" />
 
-</LinearLayout>
+
+</RelativeLayout>

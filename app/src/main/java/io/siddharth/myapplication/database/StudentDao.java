@@ -37,6 +37,22 @@ public interface StudentDao {
     @Update
     void updateStudent(StudentModel student);
 
+    @Query("SELECT DISTINCT stuClass FROM students ORDER BY stuClass ASC")
+    LiveData<List<String>> getClasses();
+
+    @Query("SELECT DISTINCT stuSection FROM students ORDER BY stuSection ASC")
+    LiveData<List<String>> getAllSections();
+
+    @Query("SELECT DISTINCT stuSection FROM students WHERE stuClass = :stuClass ORDER BY stuSection ASC")
+    LiveData<List<String>> getSectionsByClass(String stuClass);
+
+    @Query("SELECT * FROM students WHERE " +
+            "(:stuClass IS NULL OR stuClass = :stuClass) AND " +
+            "(:stuSection IS NULL OR stuSection = :stuSection) AND " +
+            "(assessmentStatus IN (:statuses)) AND " +
+            "(name LIKE :query OR admissionNo LIKE :query)")
+    LiveData<List<StudentModel>> filterStudents(int[] statuses, String stuClass, String stuSection, String query);
+
     @Query("DELETE FROM students")
     void deleteAllStudents();
 }

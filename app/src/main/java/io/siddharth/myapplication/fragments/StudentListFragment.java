@@ -12,6 +12,12 @@ import io.siddharth.myapplication.adapter.StudentAdapter;
 import io.siddharth.myapplication.databinding.FragmentStudentListBinding;
 import io.siddharth.myapplication.ui.viewmodel.StudentViewModel;
 
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import java.util.ArrayList;
+import java.util.List;
+import io.siddharth.myapplication.util.Constants;
+
 public class StudentListFragment extends Fragment {
 
     private FragmentStudentListBinding binding;
@@ -32,7 +38,62 @@ public class StudentListFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         setupRecyclerView();
         setupSearch();
+        setupFilters();
         observeStudents();
+    }
+
+    private void setupFilters() {
+        // 1. Class Spinner
+        viewModel.getClasses().observe(getViewLifecycleOwner(), classes -> {
+            List<String> classList = new ArrayList<>();
+            classList.add("All");
+            if (classes != null) classList.addAll(classes);
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_spinner_item, classList);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            binding.spinner1.setAdapter(adapter);
+        });
+
+        // 2. Section Spinner
+        binding.spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedClass = parent.getItemAtPosition(position).toString();
+                viewModel.getSections(selectedClass).observe(getViewLifecycleOwner(), sections -> {
+                    List<String> sectionList = new ArrayList<>();
+                    sectionList.add("All");
+                    if (sections != null) sectionList.addAll(sections);
+                    ArrayAdapter<String> adapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_spinner_item, sectionList);
+                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    binding.spinner2.setAdapter(adapter);
+                });
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {}
+        });
+
+        // 3. Status Spinner (Specific for Scheduled Tab)
+        List<String> statusStrings = new ArrayList<>();
+        statusStrings.add("All");
+        statusStrings.add("Pending");
+        statusStrings.add("Not Started");
+        ArrayAdapter<String> statusAdapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_spinner_item, statusStrings);
+        statusAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        binding.spinner3.setAdapter(statusAdapter);
+
+        // 4. Go Button (Apply Filters)
+        binding.applyFilters.setOnClickListener(v -> {
+            String selClass = binding.spinner1.getSelectedItem() != null ? binding.spinner1.getSelectedItem().toString() : "All";
+            String selSection = binding.spinner2.getSelectedItem() != null ? binding.spinner2.getSelectedItem().toString() : "All";
+            String selStatusStr = binding.spinner3.getSelectedItem() != null ? binding.spinner3.getSelectedItem().toString() : "All";
+
+            int status = -1; // Default for "All"
+            if (selStatusStr.equals("Pending")) status = Constants.ASSESSMENT_STATUS_PENDING;
+            else if (selStatusStr.equals("Not Started")) status = Constants.ASSESSMENT_STATUS_NOT_STARTED;
+
+            viewModel.setSelectedClass(selClass);
+            viewModel.setSelectedSection(selSection);
+            viewModel.setSelectedStatus(status);
+        });
     }
 
     private void setupRecyclerView() {
@@ -71,9 +132,7 @@ public class StudentListFragment extends Fragment {
                 adapter.submitList(students);
                 binding.countStudents.setText(String.valueOf(students.size()));
 
-                if (binding.emptyView != null) {
-                    binding.emptyView.setVisibility(students.isEmpty() ? View.VISIBLE : View.GONE);
-                }
+                binding.emptyView.setVisibility(students.isEmpty() ? View.VISIBLE : View.GONE);
             }
         });
     }

@@ -16,6 +16,9 @@ public class StudentViewModel extends AndroidViewModel {
 
     private final StudentDao studentDao;
     private final MutableLiveData<String> searchQuery = new MutableLiveData<>("");
+    private final MutableLiveData<String> selectedClass = new MutableLiveData<>(null);
+    private final MutableLiveData<String> selectedSection = new MutableLiveData<>(null);
+    private final MutableLiveData<Integer> selectedStatus = new MutableLiveData<>(-1); // -1 for All
 
     public StudentViewModel(@NonNull Application application) {
         super(application);
@@ -26,16 +29,53 @@ public class StudentViewModel extends AndroidViewModel {
         searchQuery.setValue(query);
     }
 
+    public void setSelectedClass(String stuClass) {
+        selectedClass.setValue(stuClass);
+    }
+
+    public void setSelectedSection(String section) {
+        selectedSection.setValue(section);
+    }
+
+    public void setSelectedStatus(int status) {
+        selectedStatus.setValue(status);
+    }
+
+    public LiveData<List<String>> getClasses() {
+        return studentDao.getClasses();
+    }
+
+    public LiveData<List<String>> getSections(String stuClass) {
+        if (stuClass == null || stuClass.equals("All")) {
+            return studentDao.getAllSections();
+        }
+        return studentDao.getSectionsByClass(stuClass);
+    }
+
     public LiveData<List<StudentModel>> getScheduledStudents() {
-        return Transformations.switchMap(searchQuery, query -> {
-            // Include both Pending (0) and Not Started (5) in the Scheduled tab
-            int[] statuses = {Constants.ASSESSMENT_STATUS_PENDING, Constants.ASSESSMENT_STATUS_NOT_STARTED};
-            if (query == null || query.isEmpty()) {
-                return studentDao.getStudentsByMultipleStatuses(statuses);
-            } else {
-                return studentDao.searchStudentsByMultipleStatuses(statuses, "%" + query + "%");
-            }
-        });
+        // We'll combine all filters for the scheduled tab
+        // Scheduled tab generally shows Pending and Not Started
+        return Transformations.switchMap(searchQuery, query -> 
+            Transformations.switchMap(selectedClass, stuClass ->
+                Transformations.switchMap(selectedSection, section ->
+                    Transformations.switchMap(selectedStatus, status -> {
+                        
+                        int[] statuses;
+                        if (status == -1) {
+                            statuses = new int[]{Constants.ASSESSMENT_STATUS_PENDING, Constants.ASSESSMENT_STATUS_NOT_STARTED};
+                        } else {
+                            statuses = new int[]{status};
+                        }
+
+                        String classFilter = (stuClass == null || stuClass.equals("All")) ? null : stuClass;
+                        String sectionFilter = (section == null || section.equals("All")) ? null : section;
+                        String q = (query == null || query.isEmpty()) ? "%%" : "%" + query + "%";
+
+                        return studentDao.filterStudents(statuses, classFilter, sectionFilter, q);
+                    })
+                )
+            )
+        );
     }
 
     public LiveData<List<StudentModel>> getOngoingStudents() {
